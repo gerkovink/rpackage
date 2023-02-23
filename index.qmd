@@ -563,6 +563,8 @@ Modify this to your name and paste it into the `CITATION` file.
 # Installing your own package from GitHub
 Go to `GitHub desktop`, and commit and push the changes to `GitHub`. Then run the following code block:
 ```{r}
+#| eval: false
+
 devtools::install_github("gerkovink/roundR")
 ```
 where you replace `"gerkovink/roundR"` with your `GitHub` handle and repository name. 
