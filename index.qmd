@@ -11,8 +11,15 @@ format:
     number-sections: true
 ---
 
+---
+
+[![DOI](https://zenodo.org/badge/601148138.svg)](https://zenodo.org/badge/latestdoi/601148138)<br>
+
+---
+
+
 # Pre-requisites
-It is much easier to create, manage and co-develop an R-package when you incorporate it into a distributed version control system like [Git](https://git-scm.com). The extension to a software development hosting service like [GitHub](https://github.com) is then a natural one. Although there are other procedures, devops systems and hosting services that may lend itself for package development, we outline the workflow with `Git` and `GitHub`. We also assume that you have `RStudio` installed. 
+It is much easier to create, manage and co-develop an R-package when you incorporate it into a distributed version control system like [Git](https://git-scm.com). The extension to a software development hosting service like [GitHub](https://github.com) is then a natural one. Although there are other procedures, devops systems and hosting services that may lend itself for package development, we outline the workflow with `Git` and `GitHub`. We also assume that you have [`RStudio`](https://posit.co/products/open-source/rstudio/) installed. 
 
 ## Install `Git`
 `Git` is a free and open source version control system for text files. It can handle extensive change logging for you, no matter the size of the project. `Git` is fast and efficient, but its effectiveness depends also on the frequency you instruct it to log your project's changes. 
@@ -191,7 +198,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 ```
 
-We mentioned before that the `roxygen2` engine expects the function documentation in the same file as the function code. A good starting point for that documentation is the following block
+We mentioned before that the `roxygen2` engine expects the function documentation in the same file as the function code. A good starting point for that documentation is the following block:
 ```{r eval = FALSE}
 #' A short description of your function
 #' 
@@ -202,7 +209,7 @@ We mentioned before that the `roxygen2` engine expects the function documentatio
 #' examplecode 1
 #' examplecode 2
 ```
-which for our function `rounder()` would result in the following `rounder.R` code file
+In `R`, when you have executed `usethis::use_r()` and have filled in your `R` code, you can run `Code > Insert Roxygen Skeleton` to automatically create the relevant roxygen documentation. For our function `rounder()` - with some customization and examples, this could result in the following `rounder.R` code file
 
 ```{r eval=FALSE}
 #' Round to the nearest integer
