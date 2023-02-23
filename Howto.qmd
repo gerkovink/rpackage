@@ -8,6 +8,7 @@ date: 12 December 2022
 format: 
   html:
     toc: true
+    number-sections: true
 ---
 
 # Pre-requisites
@@ -506,7 +507,14 @@ Now that we have a proper and open source package online and the world as our us
 </center>
 
 
+
 ### Add citation
+`Zenodo` prepares the repository citation for us. We can simply grab the info, change our personal information and submit it to `GitHub`. 
+
+<center>
+![](img/citation.gif){width=90%}
+</center>
+
 The final step before we would put our package *out there* is to notify how users can refer to our package. Run the following code:
 ```{r eval = FALSE}
 usethis::use_citation()
@@ -520,7 +528,9 @@ which will create the necessary citation files for modification
 
 We can now simply grab the `bibtex` citation and paste it into the `CITATION` file. 
 
+
 # Installing your own package from GitHub
+
 
 # Other useful sources
 
