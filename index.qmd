@@ -563,6 +563,8 @@ Modify this to your name and paste it into the `CITATION` file.
 # Installing your own package from GitHub
 Go to `GitHub desktop`, and commit and push the changes to `GitHub`. Then run the following code block:
 ```{r}
+#| eval: false
+
 devtools::install_github("gerkovink/roundR")
 ```
 where you replace `"gerkovink/roundR"` with your `GitHub` handle and repository name. 
@@ -570,6 +572,30 @@ where you replace `"gerkovink/roundR"` with your `GitHub` handle and repository 
 <center>
 ![](img/install_github.gif){width=90%}
 </center>
+
+# Advanced topics
+
+::: columns
+::: {.column width="30%"}
+![](img/hex.png){width=90%}
+:::
+
+::: {.column width="70%"}
+
+Potential next steps include:
+
+- Creating package documentation (e.g. vignettes)
+- Creating a hex logo (e.g. with [`hexmake`](https://connect.thinkr.fr/hexmake/))
+- Creating a package website (e.g. with [`pkgdown`](https://pkgdown.r-lib.org/))
+- Checking the FAIR-ness of your package (e.g. with [`howfairis`](https://pypi.org/project/howfairis/), or [BadgeApp](https://bestpractices.coreinfrastructure.org/en))
+- Checking the code coverage of your package (e.g. with [Codecov](https://about.codecov.io/))
+- Maintaining the package (e.g. with [GitHub issues](https://docs.github.com/en/issues/tracking-your-work-with-issues))
+- Maintaining contributions (e.g. with [a code of conduct](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project))
+
+:::
+:::
+
+
 
 # Other useful sources
 
