@@ -141,7 +141,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   </ul></li>
   <li><a href="#installing-your-own-package-from-github" id="toc-installing-your-own-package-from-github" class="nav-link" data-scroll-target="#installing-your-own-package-from-github"><span class="toc-section-number">4</span>  Installing your own package from GitHub</a></li>
-  <li><a href="#other-useful-sources" id="toc-other-useful-sources" class="nav-link" data-scroll-target="#other-useful-sources"><span class="toc-section-number">5</span>  Other useful sources</a></li>
+  <li><a href="#advanced-topics" id="toc-advanced-topics" class="nav-link" data-scroll-target="#advanced-topics"><span class="toc-section-number">5</span>  Advanced topics</a></li>
+  <li><a href="#other-useful-sources" id="toc-other-useful-sources" class="nav-link" data-scroll-target="#other-useful-sources"><span class="toc-section-number">6</span>  Other useful sources</a></li>
   </ul>
 </nav>
 </div>
@@ -656,17 +657,32 @@ When we commit the new <code>Readme</code> file to the <code>development</code> 
 <h1 data-number="4"><span class="header-section-number">4</span> Installing your own package from GitHub</h1>
 <p>Go to <code>GitHub desktop</code>, and commit and push the changes to <code>GitHub</code>. Then run the following code block: ::: {.cell}</p>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gerkovink/roundR"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Skipping install of 'roundR' from a github remote, the SHA1 (281ce247) has not changed since last install.
-  Use `force = TRUE` to force installation</code></pre>
-</div>
 <p>::: where you replace <code>"gerkovink/roundR"</code> with your <code>GitHub</code> handle and repository name.</p>
 <center>
 <img src="img/install_github.gif" class="img-fluid" style="width:90.0%">
 </center>
 </section>
-<section id="other-useful-sources" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Other useful sources</h1>
+<section id="advanced-topics" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Advanced topics</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="img/hex.png" class="img-fluid" style="width:90.0%"></p>
+</div><div class="column" style="width:70%;">
+<p>Potential next steps include:</p>
+<ul>
+<li>Creating package documentation (e.g.&nbsp;vignettes)</li>
+<li>Creating a hex logo (e.g.&nbsp;with <a href="https://connect.thinkr.fr/hexmake/"><code>hexmake</code></a>)</li>
+<li>Creating a package website (e.g.&nbsp;with <a href="https://pkgdown.r-lib.org/"><code>pkgdown</code></a>)</li>
+<li>Checking the FAIR-ness of your package (e.g.&nbsp;with <a href="https://pypi.org/project/howfairis/"><code>howfairis</code></a>, or <a href="https://bestpractices.coreinfrastructure.org/en">BadgeApp</a>)</li>
+<li>Checking the code coverage of your package (e.g.&nbsp;with <a href="https://about.codecov.io/">Codecov</a>)</li>
+<li>Maintaining the package (e.g.&nbsp;with <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues">GitHub issues</a>)</li>
+<li>Maintaining contributions (e.g.&nbsp;with <a href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-code-of-conduct-to-your-project">a code of conduct</a>)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="other-useful-sources" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Other useful sources</h1>
 <ul>
 <li><a href="https://r-pkgs.org">The <code>R Packages</code> book by Hadley Wickham and Jenny Bryan</a></li>
 </ul>
