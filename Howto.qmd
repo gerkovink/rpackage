@@ -11,7 +11,7 @@ format:
 ---
 
 # Pre-requisites
-It is much easier to create, manage and co-develop an R-package when you incorporate it into a distributed version control system like [git](https://git-scm.com). The extension to a software development hosting service like [GitHub](https://github.com) is then a natural one. Although there are other procedures, devops systems and hosting services that may lend itself for package development, we outline the workflow with `Git` and `GitHub`. We also assume that you have `RStudio` installed. 
+It is much easier to create, manage and co-develop an R-package when you incorporate it into a distributed version control system like [Git](https://git-scm.com). The extension to a software development hosting service like [GitHub](https://github.com) is then a natural one. Although there are other procedures, devops systems and hosting services that may lend itself for package development, we outline the workflow with `Git` and `GitHub`. We also assume that you have `RStudio` installed. 
 
 ## Install `Git`
 `Git` is a free and open source version control system for text files. It can handle extensive change logging for you, no matter the size of the project. `Git` is fast and efficient, but its effectiveness depends also on the frequency you instruct it to log your project's changes. 
@@ -456,12 +456,58 @@ test_that("rounder works", {
 Fortunately, our test all passed. Now rerun the `R CMD check`. If all is well you'll receive confirmation of a successful check.
 
 ### Publishing to GitHub
-Let's publish our `R`-package to `GitHub`. 
+
+**This section assumes that you are logged into your GitHub account. If you have trouble realizing this, [GitHub has a great step-by-step walkthrough](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop)**. 
+
+Let's publish our `R`-package to `GitHub`. To do so, we need to perform two steps. First, we must log (commit) our changes to the `Git` distributed version control system. This stores the file changes to our own machine. Next we must link our local `Git` to a remote online repository on `GitHub`. Luckily, with `GitHub Desktop`, we can perform all these steps in a single window interface. 
+
+Let's start by adding our `R`-package to `GitHub desktop`. Remember that we already started the package in `RStudio` as a `Git` repository, so we only have to point `GitHub desktop` to the correct directory.
+<center>
+![](img/addgitrepo.gif){width=90%}
+</center>
+
+Next, we commit the changes. This means that we save the state of files for a moment in time, so that we can always revert to that state and see how the files changed with respect to the previous state. 
+<center>
+![](img/commit.gif){width=90%}
+</center>
+Naturally, you would not only do this at the start (when `RStudio` created the `Git` repository) and end (when we have a working package), but at regular and informative intervals. For example, when you add a function, a test, a help file, a license, etcetera. 
+
+Now that we have commited our package, we can publish it on `GitHub`.
+<center>
+![](img/publish_gh.gif){width=90%}
+</center>
+
+Try your online `GitHub` repositories at [https://github.com](https://github.com). You will see your package there and that the license is automatically recognized. You will also see that you are in the `main` branch. By default, that will be the live version of your package. Now that your package is live, it would be nice to add a `Readme` file that informs visitors to your repository. But we will extend our workflow with a good behaviour: not working in the `main` branch. We would not want to accidentally overwrite or break the functionality of our package, just because we were working in the same branch. So let's add a `Readme` to a new `development` branch.
+<center>
+![](img/addreadme.gif){width=90%}
+</center>
+
+When we commit the new `Readme` file to the `development` branch, a new window opens to propose the `pull request` (PR). The PR is nothing more than a request to the package developers to pull your proposed changes into (usually) the `main` branch of the software. 
+Since we are the developers, we have to both create and accept the PR. 
+<center>
+![](img/openpr.gif){width=90%}
+</center>
+
+It is good procedure to write an informative PR message, usually outlining the nature and rationale of the changes. I also demonstrate how to accept a PR, thereby approving the changes per file (only one now) and signing it with my initials. I cannot formally *approve* my own PR, since that would leave great opportunity for subjectivity or error. Proper procedure would be to have someone else check and approve your changes. 
+
+<center>
+![](img/pullrequest.gif){width=90%}
+</center>
+
+When you go back to `GitHub desktop` and `fetch` the changes on teh remote (that would be GitHub online), you will see that you have now access to the `readme` file and the `development` branch. 
 
 ### Registering a `DOI`
+Now that we have a proper and open source package online and the world as our user base, it would be wise to allow for proper referencing of our package.
+
+`GitHub` and `Zenodo` have paired to facilitate this procedure. If you link your `Zenodo` account to `GitHub`, [as outlined here](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content), you only have to click, copy and paste to fully make your `GitHub` repo citeable. 
+
+<center>
+![](img/doi.gif){width=90%}
+</center>
+
 
 ### Add citation
-The next step before we would put our package *out there* is to notify how users can refer to our package. Run the following code:
+The final step before we would put our package *out there* is to notify how users can refer to our package. Run the following code:
 ```{r eval = FALSE}
 usethis::use_citation()
 ```
@@ -472,11 +518,11 @@ which will create the necessary citation files for modification
 • Modify 'inst/CITATION'
 ```
 
-### Update the version and release
+We can now simply grab the `bibtex` citation and paste it into the `CITATION` file. 
 
 # Installing your own package from GitHub
 
 # Other useful sources
 
-
+- [The `R Packages` book by Hadley Wickham and Jenny Bryan](https://r-pkgs.org)
 

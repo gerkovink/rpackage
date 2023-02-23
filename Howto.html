@@ -178,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="pre-requisites" class="level1">
 <h1>Pre-requisites</h1>
-<p>It is much easier to create, manage and co-develop an R-package when you incorporate it into a distributed version control system like <a href="https://git-scm.com">git</a>. The extension to a software development hosting service like <a href="https://github.com">GitHub</a> is then a natural one. Although there are other procedures, devops systems and hosting services that may lend itself for package development, we outline the workflow with <code>Git</code> and <code>GitHub</code>. We also assume that you have <code>RStudio</code> installed.</p>
+<p>It is much easier to create, manage and co-develop an R-package when you incorporate it into a distributed version control system like <a href="https://git-scm.com">Git</a>. The extension to a software development hosting service like <a href="https://github.com">GitHub</a> is then a natural one. Although there are other procedures, devops systems and hosting services that may lend itself for package development, we outline the workflow with <code>Git</code> and <code>GitHub</code>. We also assume that you have <code>RStudio</code> installed.</p>
 <section id="install-git" class="level2">
 <h2 class="anchored" data-anchor-id="install-git">Install <code>Git</code></h2>
 <p><code>Git</code> is a free and open source version control system for text files. It can handle extensive change logging for you, no matter the size of the project. <code>Git</code> is fast and efficient, but its effectiveness depends also on the frequency you instruct it to log your project’s changes.</p>
@@ -620,14 +620,46 @@ Attaching package: 'testthat'</code></pre>
 </section>
 <section id="publishing-to-github" class="level3">
 <h3 class="anchored" data-anchor-id="publishing-to-github">Publishing to GitHub</h3>
-<p>Let’s publish our <code>R</code>-package to <code>GitHub</code>.</p>
+<p><strong>This section assumes that you are logged into your GitHub account. If you have trouble realizing this, <a href="https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/installing-and-authenticating-to-github-desktop">GitHub has a great step-by-step walkthrough</a></strong>.</p>
+<p>Let’s publish our <code>R</code>-package to <code>GitHub</code>. To do so, we need to perform two steps. First, we must log (commit) our changes to the <code>Git</code> distributed version control system. This stores the file changes to our own machine. Next we must link our local <code>Git</code> to a remote online repository on <code>GitHub</code>. Luckily, with <code>GitHub Desktop</code>, we can perform all these steps in a single window interface.</p>
+Let’s start by adding our <code>R</code>-package to <code>GitHub desktop</code>. Remember that we already started the package in <code>RStudio</code> as a <code>Git</code> repository, so we only have to point <code>GitHub desktop</code> to the correct directory.
+<center>
+<img src="img/addgitrepo.gif" class="img-fluid" style="width:90.0%">
+</center>
+Next, we commit the changes. This means that we save the state of files for a moment in time, so that we can always revert to that state and see how the files changed with respect to the previous state.
+<center>
+<img src="img/commit.gif" class="img-fluid" style="width:90.0%">
+</center>
+<p>Naturally, you would not only do this at the start (when <code>RStudio</code> created the <code>Git</code> repository) and end (when we have a working package), but at regular and informative intervals. For example, when you add a function, a test, a help file, a license, etcetera.</p>
+Now that we have commited our package, we can publish it on <code>GitHub</code>.
+<center>
+<img src="img/publish_gh.gif" class="img-fluid" style="width:90.0%">
+</center>
+Try your online <code>GitHub</code> repositories at <a href="https://github.com">https://github.com</a>. You will see your package there and that the license is automatically recognized. You will also see that you are in the <code>main</code> branch. By default, that will be the live version of your package. Now that your package is live, it would be nice to add a <code>Readme</code> file that informs visitors to your repository. But we will extend our workflow with a good behaviour: not working in the <code>main</code> branch. We would not want to accidentally overwrite or break the functionality of our package, just because we were working in the same branch. So let’s add a <code>Readme</code> to a new <code>development</code> branch.
+<center>
+<img src="img/addreadme.gif" class="img-fluid" style="width:90.0%">
+</center>
+When we commit the new <code>Readme</code> file to the <code>development</code> branch, a new window opens to propose the <code>pull request</code> (PR). The PR is nothing more than a request to the package developers to pull your proposed changes into (usually) the <code>main</code> branch of the software. Since we are the developers, we have to both create and accept the PR.
+<center>
+<img src="img/openpr.gif" class="img-fluid" style="width:90.0%">
+</center>
+<p>It is good procedure to write an informative PR message, usually outlining the nature and rationale of the changes. I also demonstrate how to accept a PR, thereby approving the changes per file (only one now) and signing it with my initials. I cannot formally <em>approve</em> my own PR, since that would leave great opportunity for subjectivity or error. Proper procedure would be to have someone else check and approve your changes.</p>
+<center>
+<img src="img/pullrequest.gif" class="img-fluid" style="width:90.0%">
+</center>
+<p>When you go back to <code>GitHub desktop</code> and <code>fetch</code> the changes on teh remote (that would be GitHub online), you will see that you have now access to the <code>readme</code> file and the <code>development</code> branch.</p>
 </section>
 <section id="registering-a-doi" class="level3">
 <h3 class="anchored" data-anchor-id="registering-a-doi">Registering a <code>DOI</code></h3>
+<p>Now that we have a proper and open source package online and the world as our user base, it would be wise to allow for proper referencing of our package.</p>
+<p><code>GitHub</code> and <code>Zenodo</code> have paired to facilitate this procedure. If you link your <code>Zenodo</code> account to <code>GitHub</code>, <a href="https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content">as outlined here</a>, you only have to click, copy and paste to fully make your <code>GitHub</code> repo citeable.</p>
+<center>
+<img src="img/doi.gif" class="img-fluid" style="width:90.0%">
+</center>
 </section>
 <section id="add-citation" class="level3">
 <h3 class="anchored" data-anchor-id="add-citation">Add citation</h3>
-<p>The next step before we would put our package <em>out there</em> is to notify how users can refer to our package. Run the following code:</p>
+<p>The final step before we would put our package <em>out there</em> is to notify how users can refer to our package. Run the following code:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_citation</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -637,6 +669,7 @@ Attaching package: 'testthat'</code></pre>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>✔ Writing <span class="st">'inst/CITATION'</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>• Modify <span class="st">'inst/CITATION'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>We can now simply grab the <code>bibtex</code> citation and paste it into the <code>CITATION</code> file.</p>
 </section>
 </section>
 </section>
@@ -645,6 +678,9 @@ Attaching package: 'testthat'</code></pre>
 </section>
 <section id="other-useful-sources" class="level1">
 <h1>Other useful sources</h1>
+<ul>
+<li><a href="https://r-pkgs.org">The <code>R Packages</code> book by Hadley Wickham and Jenny Bryan</a></li>
+</ul>
 </section>
 
 </main>
