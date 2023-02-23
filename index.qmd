@@ -15,6 +15,7 @@ format:
 
 [![DOI](https://zenodo.org/badge/601148138.svg)](https://zenodo.org/badge/latestdoi/601148138)<br>
 
+[Watch the recording here](https://www.dropbox.com/s/t66a6q3t9dqtv9z/rpackage.mp4?dl=0)
 ---
 
 
