@@ -673,12 +673,43 @@ When we commit the new <code>Readme</code> file to the <code>development</code> 
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>✔ Writing <span class="st">'inst/CITATION'</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>• Modify <span class="st">'inst/CITATION'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We can now simply grab the <code>bibtex</code> citation and paste it into the <code>CITATION</code> file.</p>
+<p>We can now simply grab the text and/or <code>bibtex</code> citation from <code>GitHub</code> and paste it into the <code>CITATION</code> file. The citation info cf.&nbsp;<code>R</code>-packages could be:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citHeader</span>(<span class="st">"To cite roundR in publications use:"</span>)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">citEntry</span>(</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">entry    =</span> <span class="st">"Manual"</span>,</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">title    =</span> <span class="st">"gerkovink/roundR: Version 0.2.0 - First release"</span>,</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">author   =</span> <span class="st">"Gerko Vink and Hanne Oberman"</span>,</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">year     =</span> <span class="st">"2023"</span>,</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">doi      =</span> <span class="st">"10.5281/zenodo.7668889"</span>,</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">url      =</span> <span class="st">"github.com/gerkovink/roundR"</span>,</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">textVersion =</span> <span class="fu">paste</span>(</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="st">"Vink, G and Oberman, H.I. (2023). gerkovink/roundR: Version 0.2.0 - First release (Version v0.2.0) [Computer software]. https://doi.org/10.5281/zenodo.7668889"</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Modify this to your name and paste it into the <code>CITATION</code> file.</p>
+<center>
+<img src="img/use_citation.gif" class="img-fluid" style="width:90.0%">
+</center>
 </section>
 </section>
 </section>
 <section id="installing-your-own-package-from-github" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Installing your own package from GitHub</h1>
+<p>Go to <code>GitHub desktop</code>, and commit and push the changes to <code>GitHub</code>. Then run the following code block:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gerkovink/roundR"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Skipping install of 'roundR' from a github remote, the SHA1 (85addb57) has not changed since last install.
+  Use `force = TRUE` to force installation</code></pre>
+</div>
+</div>
+<p>where you replace <code>"gerkovink/roundR"</code> with your <code>GitHub</code> handle and repository name.</p>
+<center>
+<img src="img/install_github.gif" class="img-fluid" style="width:90.0%">
+</center>
 </section>
 <section id="other-useful-sources" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Other useful sources</h1>
