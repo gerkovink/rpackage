@@ -16,6 +16,8 @@ format:
 [![DOI](https://zenodo.org/badge/601148138.svg)](https://zenodo.org/badge/latestdoi/601148138)<br>
 
 [Watch the recording here](https://www.dropbox.com/s/5lqwsn63v93f5dn/rpackage-00.00.17.848-00.56.25.896.mp4?dl=0)
+Disclaimer: I've made an error by removing the `GitHub` repo `roundR` that I created in the exercise materials and re-creating it in my account with the exact same `roundR` name during the lecture. That is why `Zenodo` does not accept it a second time for a DOI. This makes sense, as you would not want to create a new DOI for content with the same name at the same location, nor use the same DOI for content with different time codes and temporal origin. For your repository, however, this would not be an issue. 
+
 ---
 
 
